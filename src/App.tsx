@@ -28,7 +28,7 @@ const configuration = {
 const SessionLost = () => <p>Session Lost</p>;
 const ServiceWorkerNotSupported = () => <p>Not supported</p>;
 
-function App() {
+export const App = () => {
   return (
     <OidcProvider
       configuration={configuration}
@@ -50,6 +50,4 @@ function App() {
       </Router>
     </OidcProvider>
   );
-}
-
-export default App;
+};

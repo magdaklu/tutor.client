@@ -1,11 +1,10 @@
-import { useOidc, useOidcUser, OidcUserStatus } from "@axa-fr/react-oidc";
+import { useOidc } from "@axa-fr/react-oidc";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { DisplayUser } from "./UserInfo";
 
 export const Header = () => {
   const { login, logout, isAuthenticated } = useOidc();
-  const { oidcUser, oidcUserLoadingState } = useOidcUser();
 
   return (
     <div className={styles.header}>

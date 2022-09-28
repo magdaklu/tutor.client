@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Question from "./Question";
 import Answer from "./Answer";
 import styles from "./FlashCardCheck.module.css";

@@ -9,6 +9,6 @@ export const DisplayUser = () => {
     case OidcUserStatus.LoadingError:
       return <div></div>;
     default:
-      return <div className="card text-white">{oidcUser.name}</div>;
+      return <div>{oidcUser.name}</div>;
   }
 };
