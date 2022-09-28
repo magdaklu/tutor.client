@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { OidcProvider } from "@axa-fr/react-oidc";
 import { Home } from "./Home";
@@ -14,13 +14,14 @@ import { AuthError } from "./common/oidc/AuthError";
 // This configuration use hybrid mode
 // ServiceWorker are used if available (more secure) else tokens are given to the client
 // You need to give inside your code the "access_token" when using fetch
+
 const configuration = {
-  client_id: "tutor.interactive",
+  client_id: process.env.REACT_APP_CLIENT_ID || "",
   redirect_uri: window.location.origin + "/authentication/callback",
   silent_redirect_uri:
     window.location.origin + "/authentication/silent-callback",
-  scope: "openid profile offline_access TutorAPI.read TutorAPI.write", // offline_access scope allow your client to retrieve the refresh_token
-  authority: "https://localhost:7225",
+  scope: process.env.REACT_APP_SCOPE || "",
+  authority: process.env.REACT_APP_AUTHORITY || "",
   service_worker_relative_url: "/OidcServiceWorker.js",
   service_worker_only: false,
 };
@@ -28,7 +29,7 @@ const configuration = {
 const SessionLost = () => <p>Session Lost</p>;
 const ServiceWorkerNotSupported = () => <p>Not supported</p>;
 
-export const App = () => {
+function App() {
   return (
     <OidcProvider
       configuration={configuration}
@@ -50,4 +51,6 @@ export const App = () => {
       </Router>
     </OidcProvider>
   );
-};
+}
+
+export default App;
