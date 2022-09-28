@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { OidcProvider } from "@axa-fr/react-oidc";
+import { Home } from "./Home";
+import FlashCards from "./tutor/flash-cards/FlashCards";
+import Quiz from "./tutor/quizes/Quiz";
+import Exam from "./tutor/exams/Exam";
+import { Header } from "./common/Header";
+import { Loading } from "./common/Loading";
+import { AuthSuccess } from "./common/oidc/AuthSuccess";
+import { Authenticating } from "./common/oidc/Authenticating";
+import { AuthError } from "./common/oidc/AuthError";
+
+// This configuration use hybrid mode
+// ServiceWorker are used if available (more secure) else tokens are given to the client
+// You need to give inside your code the "access_token" when using fetch
+const configuration = {
+  client_id: "tutor.interactive",
+  redirect_uri: window.location.origin + "/authentication/callback",
+  silent_redirect_uri:
+    window.location.origin + "/authentication/silent-callback",
+  scope: "openid profile offline_access TutorAPI.read TutorAPI.write", // offline_access scope allow your client to retrieve the refresh_token
+  authority: "https://localhost:7225",
+  service_worker_relative_url: "/OidcServiceWorker.js",
+  service_worker_only: false,
+};
+
+const SessionLost = () => <p>Session Lost</p>;
+const ServiceWorkerNotSupported = () => <p>Not supported</p>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <OidcProvider
+      configuration={configuration}
+      loadingComponent={Loading}
+      authenticatingErrorComponent={AuthError}
+      authenticatingComponent={Authenticating}
+      sessionLostComponent={SessionLost}
+      serviceWorkerNotSupportedComponent={ServiceWorkerNotSupported}
+      callbackSuccessComponent={AuthSuccess}
+    >
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home></Home>} />
+          <Route path="/flashcards" element={<FlashCards />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/exam" element={<Exam />} />
+        </Routes>
+      </Router>
+    </OidcProvider>
   );
 }
 

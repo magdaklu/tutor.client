@@ -1,0 +1,32 @@
+.header {
+  /* background-color: var(--theme-color);
+  margin: 0; */
+  padding: 4px 12px;
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__button {
+  cursor: pointer;
+  height: 24px;
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  border: solid white 1px;
+}
+.header__itemcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header__item {
+  margin: 0;
+  min-width: 80px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}

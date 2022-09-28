@@ -1,0 +1,13 @@
+.success {
+  height: calc(100vh - 48px);
+  background-color: #4edeb5;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 24px;
+}
+.success__title {
+  color: white;
+  padding: 24px 0;
+}
