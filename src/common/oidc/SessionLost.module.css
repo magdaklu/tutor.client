@@ -1,0 +1,13 @@
+.error {
+  height: calc(100vh - 48px);
+  background-color: #de5c4e;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 24px;
+}
+.error__title {
+  color: white;
+  padding: 24px 0;
+}

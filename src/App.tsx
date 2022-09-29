@@ -10,6 +10,7 @@ import { Loading } from "./common/Loading";
 import { AuthSuccess } from "./common/oidc/AuthSuccess";
 import { Authenticating } from "./common/oidc/Authenticating";
 import { AuthError } from "./common/oidc/AuthError";
+import { SessionLost } from "./common/oidc/SessionLost";
 
 // This configuration use hybrid mode
 // ServiceWorker are used if available (more secure) else tokens are given to the client
@@ -26,7 +27,6 @@ const configuration = {
   service_worker_only: false,
 };
 
-const SessionLost = () => <p>Session Lost</p>;
 const ServiceWorkerNotSupported = () => <p>Not supported</p>;
 
 function App() {
