@@ -14,14 +14,33 @@
 // };
 
 const trustedDomains = {
-  default: ["https://localhost:7225", "https://localhost:7123/"],
-  config_classic: ["https://localhost:7225"],
-  config_without_silent_login: ["https://localhost:7225"],
-  config_without_refresh_token: ["https://localhost:7225"],
-  config_without_refresh_token_silent_login: ["https://localhost:7225"],
+  default: [
+    "https://localhost:7225",
+    "https://localhost:7123/",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
+  config_classic: [
+    "https://localhost:7225",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
+  config_without_silent_login: [
+    "https://localhost:7225",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
+  config_without_refresh_token: [
+    "https://localhost:7225",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
+  config_without_refresh_token_silent_login: [
+    "https://localhost:7225",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
   config_google: [
     "https://oauth2.googleapis.com",
     "https://openidconnect.googleapis.com",
   ],
-  config_with_hash: ["https://localhost:7225"],
+  config_with_hash: [
+    "https://localhost:7225",
+    "https://tutor-identity-server.azurewebsites.net/connect/token",
+  ],
 };
