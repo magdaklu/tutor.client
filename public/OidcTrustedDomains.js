@@ -17,23 +17,23 @@ const trustedDomains = {
   default: [
     "https://localhost:7225",
     "https://localhost:7123/",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
   config_classic: [
     "https://localhost:7225",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
   config_without_silent_login: [
     "https://localhost:7225",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
   config_without_refresh_token: [
     "https://localhost:7225",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
   config_without_refresh_token_silent_login: [
     "https://localhost:7225",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
   config_google: [
     "https://oauth2.googleapis.com",
@@ -41,6 +41,6 @@ const trustedDomains = {
   ],
   config_with_hash: [
     "https://localhost:7225",
-    "https://tutor-identity-server.azurewebsites.net/connect/token",
+    "https://tutor-identity-server.azurewebsites.net",
   ],
 };
