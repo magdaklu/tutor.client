@@ -10,6 +10,7 @@ import { AuthSuccess } from "./common/oidc/AuthSuccess";
 import { Authenticating } from "./common/oidc/Authenticating";
 import { AuthError } from "./common/oidc/AuthError";
 import { SessionLost } from "./common/oidc/SessionLost";
+import FlashCardForm from "./tutor/flash-cards/FlashCardForm";
 
 // This configuration use hybrid mode
 // ServiceWorker are used if available (more secure) else tokens are given to the client
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home></Home>} />
           <Route path="/flashcards" element={<FlashCards />} />
+          <Route path="/flashcardsform" element={<FlashCardForm />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/exam" element={<Exam />} />
         </Routes>

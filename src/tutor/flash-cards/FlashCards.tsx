@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
 import FlashCardCheck from "./FlashCardCheck";
-import axios from "axios";
-
-const apiUrl = "https://tutor-api-dev.azurewebsites.net/quiz/flashcards";
+import { useGetFlashcardsQuery } from "../../api/apiSlice";
 
 export default function FlashCards() {
-  useEffect(() => {
-    axios.get(apiUrl).then((response: any) => {
-      setFlashCards(response.data);
-    });
-  }, []);
-  const [flashCards, setFlashCards] = useState([]);
+  const {
+    data: flashcards,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useGetFlashcardsQuery("", "" as any);
 
-  return <FlashCardCheck flashCards={flashCards} />;
+  return (
+    <FlashCardCheck
+      flashCards={flashcards}
+      isLoading={isLoading}
+      error={error}
+    />
+  );
 }

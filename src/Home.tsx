@@ -9,8 +9,11 @@ export const Home = () => {
         <Link to="flashcards" className={styles.home__option}>
           Flash cards
         </Link>
+        <Link to="flashcardsform" className={styles.home__option}>
+          Add Flash card
+        </Link>
         <Link to="quiz" className={styles.home__option}>
-          Quiz
+          Exam
         </Link>
         <Link to="exam" className={styles.home__option}>
           Exam

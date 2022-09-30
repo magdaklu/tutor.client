@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .flashcard__showbutton {
   cursor: pointer;
@@ -63,4 +64,7 @@
 .flashcard__navbutton:hover {
   color: #4f0ce1;
   background-color: #ffffffb3;
+}
+.flashcard_error {
+  margin-top: 48px;
 }

@@ -2,8 +2,10 @@ import { useState } from "react";
 import Question from "./Question";
 import Answer from "./Answer";
 import styles from "./FlashCardCheck.module.css";
+import { LoadingEllipsis } from "../../common/LoadingEllipsis";
+import { ErrorIcon } from "../../common/ErrorIcon";
 
-export default function FlashCardCheck(props: any) {
+export default function FlashCardCheck({ flashCards, isLoading, error }: any) {
   const [cardCheck, setCardCheck] = useState({
     current: 0,
     displayAnswer: false,
@@ -13,7 +15,7 @@ export default function FlashCardCheck(props: any) {
     setCardCheck({ ...cardCheck, displayAnswer: !cardCheck.displayAnswer });
 
   const nextTask = () => {
-    if (props.flashCards.length - 1 > cardCheck.current) {
+    if (flashCards.length - 1 > cardCheck.current) {
       cardCheck.current++;
       setCardCheck({ ...cardCheck, displayAnswer: false });
     }
@@ -30,15 +32,31 @@ export default function FlashCardCheck(props: any) {
     <div className={styles.flashcard}>
       <div className={styles.flashcard__title}>English quiz</div>
       <div className={styles.flashcard__card}>
-        <div className={styles.flashcard__task}>
-          <Question data={props.flashCards[cardCheck.current]?.question} />
-        </div>
-        <div
-          className={styles.flashcard__answer}
-          style={{ visibility: cardCheck.displayAnswer ? "visible" : "hidden" }}
-        >
-          <Answer data={props.flashCards[cardCheck.current]?.answer} />
-        </div>
+        {isLoading && (
+          <div className={styles.flashcard_error}>
+            <LoadingEllipsis color="#4f0ce1" />
+          </div>
+        )}
+        {error && (
+          <div className={styles.flashcard_error}>
+            <ErrorIcon text="We ran into a problem" />
+          </div>
+        )}
+        {flashCards && (
+          <>
+            <div className={styles.flashcard__task}>
+              <Question data={flashCards[cardCheck.current]?.question} />
+            </div>
+            <div
+              className={styles.flashcard__answer}
+              style={{
+                visibility: cardCheck.displayAnswer ? "visible" : "hidden",
+              }}
+            >
+              <Answer data={flashCards[cardCheck.current]?.answer} />
+            </div>
+          </>
+        )}
         <button className={styles.flashcard__showbutton} onClick={showAnswer}>
           Show answer
         </button>

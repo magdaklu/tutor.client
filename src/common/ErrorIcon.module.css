@@ -1,0 +1,11 @@
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.error__icon {
+  margin: 8px 0;
+}
+.error__title {
+  font-size: 14px;
+}
