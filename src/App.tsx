@@ -1,4 +1,3 @@
-import styles from "./App.module.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { OidcProvider } from "@axa-fr/react-oidc";
 import { Home } from "./Home";
