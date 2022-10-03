@@ -18,6 +18,9 @@ export const Home = () => {
         <Link to="exam" className={styles.home__option}>
           Exam
         </Link>
+        <Link to="wheel" className={styles.home__option}>
+          Wheel
+        </Link>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { Home } from "./Home";
 import FlashCards from "./tutor/flash-cards/FlashCards";
 import Quiz from "./tutor/quizes/Quiz";
 import Exam from "./tutor/exams/Exam";
+import Wheel from "./tutor/excercises/Wheel";
 import { Header } from "./common/Header";
 import { Loading } from "./common/Loading";
 import { AuthSuccess } from "./common/oidc/AuthSuccess";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/flashcardsform" element={<FlashCardForm />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/exam" element={<Exam />} />
+          <Route path="/wheel" element={<Wheel />} />
         </Routes>
       </Router>
     </OidcProvider>
