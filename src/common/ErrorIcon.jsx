@@ -1,7 +1,7 @@
 import styles from "./ErrorIcon.module.css";
 import { ReactComponent as Icon } from "./../icons/panic.svg";
 
-export const ErrorIcon = ({ color, text, iconWidth }: any) => {
+export const ErrorIcon = ({ color, text, iconWidth }) => {
   const defaultColor = "#6a6868b3";
   return (
     <div className={styles.error}>

@@ -8,7 +8,7 @@ export default function FlashCards() {
     isSuccess,
     isError,
     error,
-  } = useGetFlashcardsQuery("", "" as any);
+  } = useGetFlashcardsQuery();
 
   return (
     <FlashCardCheck

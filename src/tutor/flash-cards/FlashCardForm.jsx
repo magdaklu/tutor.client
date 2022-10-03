@@ -23,9 +23,9 @@ export default function FlashCardForm() {
 
   const dispatch = useDispatch();
 
-  const onQuestionChanged = (event: any) => setQuestion(event.target.value);
-  const onAnswerChanged = (event: any) => setAnswer(event.target.value);
-  const onSaveClicked = (event: any) => {
+  const onQuestionChanged = (event) => setQuestion(event.target.value);
+  const onAnswerChanged = (event) => setAnswer(event.target.value);
+  const onSaveClicked = (event) => {
     if (question && answer) {
       dispatch(
         flashCardAdded({

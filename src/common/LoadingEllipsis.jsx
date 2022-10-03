@@ -1,6 +1,6 @@
 import styles from "./LoadingEllipsis.module.css";
 
-export const LoadingEllipsis = ({ color }: any) => {
+export const LoadingEllipsis = ({ color }) => {
   const defaultColor = "#fff";
   return (
     <div className={styles.loading__ellipsis}>

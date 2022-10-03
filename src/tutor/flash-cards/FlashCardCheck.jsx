@@ -5,7 +5,7 @@ import styles from "./FlashCardCheck.module.css";
 import { LoadingEllipsis } from "../../common/LoadingEllipsis";
 import { ErrorIcon } from "../../common/ErrorIcon";
 
-export default function FlashCardCheck({ flashCards, isLoading, error }: any) {
+export default function FlashCardCheck({ flashCards, isLoading, error }) {
   const [cardCheck, setCardCheck] = useState({
     current: 0,
     displayAnswer: false,

@@ -32,12 +32,12 @@ export const {
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
-export const flashCardsLoadRequestAsync = () => (dispatch: any) => {
+export const flashCardsLoadRequestAsync = () => (dispatch) => {
   // setTimeout(() => {
   //   dispatch(incrementByAmount(amount));
   // }, 1000);
 };
 
-export const selectFlashCards = (state: any) => state.flashCards;
+export const selectFlashCards = (state) => state.flashCards;
 
 export default flashCardsSlice.reducer;

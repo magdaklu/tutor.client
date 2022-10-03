@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FlashCard } from "../tutor/flash-cards/FlashCard.model";
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -8,7 +7,7 @@ export const apiSlice = createApi({
     getFlashcards: builder.query({
       query: () => "/quiz/flashcards",
     }),
-    addFlashcard: builder.mutation<FlashCard, Partial<FlashCard>>({
+    addFlashcard: builder.mutation({
       query: (body) => ({
         url: "/quiz/flashcards",
         method: "POST",
