@@ -1,6 +1,6 @@
 .wheel {
   width: 100vw;
-  height: calc(100vh - 64px);
+  height: calc(100vh + 11px);
   background-color: rgb(230, 112, 112);
   margin-top: -64px;
 }

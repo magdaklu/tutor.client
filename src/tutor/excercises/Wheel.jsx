@@ -4,6 +4,13 @@ import { scaleLinear, scaleOrdinal } from "d3-scale";
 import { select } from "d3-selection";
 import { pie } from "d3";
 import { schemeCategory20 } from "d3-scale-chromatic";
+import { arc } from "d3-shape";
+
+const arcTest = arc()
+  .innerRadius(0)
+  .outerRadius(100)
+  .startAngle(0)
+  .endAngle(Math.PI * 2);
 
 export default function Wheel() {
   var padding = { top: 20, right: 40, bottom: 0, left: 0 },
@@ -19,6 +26,12 @@ export default function Wheel() {
     {
       label: "Question 30",
       value: 1,
+      question:
+        "What character symbol do I use to specify multiple CSS selectors in one code block?",
+    }, //comma
+    {
+      label: "Question 30",
+      value: 2,
       question:
         "What character symbol do I use to specify multiple CSS selectors in one code block?",
     }, //comma
@@ -200,6 +213,11 @@ export default function Wheel() {
 
   return (
     <div className={styles.wheel}>
+      {/* <svg>
+        <g transform={`translate(${100}, ${200})`}>
+          <path d={arcTest()} />
+        </g>
+      </svg> */}
       <div id="chart"></div>
       <div id="question">
         <h1></h1>

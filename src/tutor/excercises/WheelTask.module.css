@@ -1,0 +1,10 @@
+.wheel {
+  width: 100vw;
+  height: calc(100vh + 32px);
+  background-color: #70c7e6;
+  margin-top: -64px;
+}
+.arc:hover path {
+  fill: red !important;
+  stroke: red;
+}

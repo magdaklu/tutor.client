@@ -12,6 +12,7 @@ import { Authenticating } from "./common/oidc/Authenticating";
 import { AuthError } from "./common/oidc/AuthError";
 import { SessionLost } from "./common/oidc/SessionLost";
 import FlashCardForm from "./tutor/flash-cards/FlashCardForm";
+import { WheelTask } from "./tutor/excercises/WheelTask";
 
 // This configuration use hybrid mode
 // ServiceWorker are used if available (more secure) else tokens are given to the client
@@ -50,6 +51,7 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/exam" element={<Exam />} />
           <Route path="/wheel" element={<Wheel />} />
+          <Route path="/wheeltask" element={<WheelTask />} />
         </Routes>
       </Router>
     </OidcProvider>
