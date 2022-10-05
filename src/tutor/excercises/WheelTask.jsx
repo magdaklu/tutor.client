@@ -27,7 +27,11 @@ export const WheelTask = ({ wheel, setScore }) => {
 
   return (
     <div className={styles.wheel}>
-      <svg ref={svgRef}></svg>
+      <svg
+        viewBox="-325 -325 650 650"
+        className={styles.scalingsvg}
+        ref={svgRef}
+      ></svg>
     </div>
   );
 };

@@ -13,16 +13,13 @@ export const Home = () => {
           Add Flash card
         </Link>
         <Link to="quiz" className={styles.home__option}>
-          Exam
+          Quiz
         </Link>
         <Link to="exam" className={styles.home__option}>
           Exam
         </Link>
         <Link to="wheel" className={styles.home__option}>
           Wheel
-        </Link>
-        <Link to="wheeltask" className={styles.home__option}>
-          Wheel Task
         </Link>
       </div>
     </div>

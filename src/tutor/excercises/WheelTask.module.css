@@ -1,0 +1,20 @@
+.wheel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 100%;
+}
+.scalingsvg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+@media all and (min-width: 1320px) {
+  .wheel {
+    width: 70%;
+  }
+}

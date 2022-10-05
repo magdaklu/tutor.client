@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .wheel__form {
   background-color: white;
@@ -38,4 +39,17 @@
   resize: none;
   font-size: 18px;
   padding: 4px 8px;
+}
+@media all and (max-width: 700px) {
+  .wheel {
+    overflow: scroll;
+  }
+  .wheel__form {
+    background-color: white;
+    width: 80%;
+    height: auto;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+  }
 }

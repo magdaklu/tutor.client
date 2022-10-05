@@ -17,12 +17,7 @@ export function getWheelConfig() {
 }
 
 export function styleSvg(svgRef, width, height) {
-  return select(svgRef)
-    .attr("width", width)
-    .attr("height", height)
-    .style("overflow", "visible")
-    .style("margin-top", width + "px")
-    .style("margin-left", width + "px");
+  return select(svgRef).style("overflow", "visible");
 }
 
 export function cleanCurrentSvg(svg) {
