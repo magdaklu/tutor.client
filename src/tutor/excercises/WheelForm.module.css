@@ -1,0 +1,41 @@
+.wheel {
+  width: 100%;
+  height: calc(100vh + 32px);
+  background-color: #70c6e6;
+  margin-top: -64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wheel__form {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 24px;
+  display: flex;
+}
+.wheel__task {
+  background-color: #70c7e620;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wheel__menu {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.wheel__label {
+  margin-bottom: 8px;
+}
+.wheel__input {
+  flex: 1;
+  border-radius: 4px;
+  resize: none;
+  font-size: 18px;
+  padding: 4px 8px;
+}
