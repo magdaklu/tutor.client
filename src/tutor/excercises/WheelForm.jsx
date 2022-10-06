@@ -1,28 +1,10 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { getDefaultWheel } from "./wheel";
 import styles from "./WheelForm.module.css";
 import { WheelTask } from "./WheelTask";
 
 export const WheelForm = () => {
-  const [wheel, setWheel] = useState({
-    labelString: `Title 1
-Title 2
-Title 3
-Title 4
-Title 5
-Title 6
-Title 7
-Title 8`,
-    data: [
-      { label: "Title 1", score: 0 },
-      { label: "Title 2", score: 0 },
-      { label: "Title 3", score: 0 },
-      { label: "Title 4", score: 0 },
-      { label: "Title 5", score: 0 },
-      { label: "Title 6", score: 0 },
-      { label: "Title 7", score: 0 },
-      { label: "Title 8", score: 0 },
-    ],
-  });
+  const [wheel, setWheel] = useState(getDefaultWheel());
   const handleChange = (e) => {
     const labelString = e.target.value;
     const data = labelString
@@ -47,14 +29,12 @@ Title 8`,
         <section className={styles.wheel__menu}>
           <h1>Wheel Excercise</h1>
           <label className={styles.wheel__label}>
-            Write the titles of the areas you want to analyze:{" "}
+            Write the titles of the areas you want to analyze:
           </label>
           <textarea
             className={styles.wheel__input}
             value={wheel.labelString}
             onChange={handleChange}
-            rows={5}
-            cols={5}
           />
         </section>
         <section className={styles.wheel__task}>

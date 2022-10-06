@@ -1,9 +1,9 @@
 .home {
   margin-top: -32px;
   text-align: center;
-  background-color: #03b8b2;
+  background-color: #0fc3bd;
   padding: 56px 24px 24px 24px;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 }
 .home__title {
   color: white;

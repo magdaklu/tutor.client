@@ -113,3 +113,26 @@ export function addWheelText(svg, data) {
     })
     .text((d) => d.data.label);
 }
+
+export function getDefaultWheel() {
+  return {
+    labelString: `Title 1
+Title 2
+Title 3
+Title 4
+Title 5
+Title 6
+Title 7
+Title 8\nk`,
+    data: [
+      { label: "Title 1", score: 0 },
+      { label: "Title 2", score: 0 },
+      { label: "Title 3", score: 0 },
+      { label: "Title 4", score: 0 },
+      { label: "Title 5", score: 0 },
+      { label: "Title 6", score: 0 },
+      { label: "Title 7", score: 0 },
+      { label: "Title 8", score: 0 },
+    ],
+  };
+}
